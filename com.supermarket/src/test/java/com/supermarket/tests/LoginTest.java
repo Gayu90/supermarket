@@ -40,6 +40,7 @@ public class LoginTest extends Base {
 			loginpage.login( userName,password);
 			Assert.assertTrue(loginpage.getLoginStatus());
 			
+			
 	}
 	}
 	
