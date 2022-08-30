@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [grouprun]" parallel="tests">
+  <listeners>
+    <listener class-name="com.supermarket.listeners.ExtentReporter"/>
+  </listeners>
+  <test name="sanityrun(failed)" parallel="tests">
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.supermarket.tests.ManageExpenseTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="verifyThatExpensecategoryRadioButtonIsSelected"/>
+          <include name="tearDown"/>
+          <include name="setUp_crossBrowser"/>
+        </methods>
+      </class> <!-- com.supermarket.tests.ManageExpenseTest -->
+    </classes>
+  </test> <!-- sanityrun(failed) -->
+</suite> <!-- Failed suite [grouprun] -->

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="crossbrowser" thread-count="3" parallel="tests">
+<listeners>
+<listener class-name="com.supermarket.listeners.ExtentReporter"></listener>
+</listeners>
+<test name="reggressionchrome">
+<parameter name="browser" value="chrome"></parameter>
+<classes>
+<class name="com.supermarket.tests.LoginTest"></class>
+<class name="com.supermarket.tests.ManageUsersTest"></class>
+</classes>
+</test>
+<test name="reggressionedge">
+<parameter name="browser" value="edge"></parameter>
+<classes>
+<class name="com.supermarket.tests.ManageProductTest"></class>
+<class name="com.supermarket.tests.ManageUsersTest"></class>
+</classes>
+</test>
+<test name="reggressionfirefox">
+<parameter name="browser" value="chrome"></parameter>
+<classes>
+<class name="com.supermarket.tests.ManageProductTest"></class>
+<class name="com.supermarket.tests.ManageUsersTest"></class>
+</classes>
+</test>
+</suite>
+

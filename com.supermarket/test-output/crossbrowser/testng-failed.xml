@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [crossbrowser]" parallel="tests">
+  <listeners>
+    <listener class-name="com.supermarket.listeners.ExtentReporter"/>
+  </listeners>
+  <test name="reggressionfirefox(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.supermarket.tests.ManageProductTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="setUp_crossBrowser"/>
+          <include name="verifyProductImageUploadedIsDisplayed"/>
+        </methods>
+      </class> <!-- com.supermarket.tests.ManageProductTest -->
+      <class name="com.supermarket.tests.ManageUsersTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="verifyAdminUserDeactivation"/>
+          <include name="tearDown"/>
+          <include name="setUp_crossBrowser"/>
+        </methods>
+      </class> <!-- com.supermarket.tests.ManageUsersTest -->
+    </classes>
+  </test> <!-- reggressionfirefox(failed) -->
+  <test name="reggressionchrome(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.supermarket.tests.ManageUsersTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="verifyAdminUserDeactivation"/>
+          <include name="tearDown"/>
+          <include name="setUp_crossBrowser"/>
+        </methods>
+      </class> <!-- com.supermarket.tests.ManageUsersTest -->
+    </classes>
+  </test> <!-- reggressionchrome(failed) -->
+  <test name="reggressionedge(failed)" parallel="tests">
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="com.supermarket.tests.ManageProductTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="setUp_crossBrowser"/>
+          <include name="verifyProductImageUploadedIsDisplayed"/>
+        </methods>
+      </class> <!-- com.supermarket.tests.ManageProductTest -->
+      <class name="com.supermarket.tests.ManageUsersTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="verifyAdminUserDeactivation"/>
+          <include name="tearDown"/>
+          <include name="setUp_crossBrowser"/>
+        </methods>
+      </class> <!-- com.supermarket.tests.ManageUsersTest -->
+    </classes>
+  </test> <!-- reggressionedge(failed) -->
+</suite> <!-- Failed suite [crossbrowser] -->
