@@ -50,7 +50,7 @@ public class ManageProductTest extends Base {
 		loginpage.login();
 		manageproductpage.uploadProductImage();
 		Assert.assertTrue(manageproductpage.uploadProductImage());
-		
+	
 }
 
 }
