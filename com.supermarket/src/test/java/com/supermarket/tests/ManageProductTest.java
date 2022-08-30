@@ -1,6 +1,7 @@
 package com.supermarket.tests;
 
 import org.testng.Assert;
+
 import org.testng.annotations.Test;
 
 import com.supermarket.base.Base;
