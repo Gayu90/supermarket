@@ -13,12 +13,12 @@ public class ManageProductTest extends Base {
 	LoginPage loginpage;
 
 	@Test(priority = 1)
-	public void verifyThatWeightradioButtonIsselected() {
+	public void verifyThatAlertTextPopUpWhenMandatoryFieldIsMissed() {
 		manageproductpage = new ManageProductPage(driver);
 		loginpage = new LoginPage(driver);
 		loginpage.login();
-		manageproductpage.SelectWeightRadioButton();
-		Assert.assertTrue(manageproductpage.SelectWeightRadioButton());
+		String actual=manageproductpage.AddProduct();
+        System.out.println(actual);
 	}
 
 	@Test(priority=-1)
