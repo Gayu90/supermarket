@@ -37,11 +37,11 @@ public class ManageExpensePage {
 		manageExpenseTab.click();
 	}
 
-	public void ClickOnExpensecategory() {
+	public void clickOnExpensecategory() {
 		expenseCategoryButton.click();
 	}
 
-	public void ClickOnManageExpenseButton() {
+	public void clickOnManageExpenseButton() {
 		manageExpenseButton.click();
 	}
 	
@@ -49,14 +49,14 @@ public class ManageExpensePage {
 	public boolean ExpensecategoryPage() {
 		utility = new GeneralUtility(driver);
 		clickOnManageExpense();
-		ClickOnExpensecategory();
+		clickOnExpensecategory();
 		return utility.isElementSelected(expenseCategoryButton);
 	}
 
 	public String getDuplicateTitleAlertMessage() {
 		utility = new GeneralUtility(driver);
 		clickOnManageExpense();
-		ClickOnExpensecategory();
+		clickOnExpensecategory();
 		newtoolTip.click();
 		titleField.sendKeys("vegetables");
 		saveButton.click();
@@ -66,20 +66,20 @@ public class ManageExpensePage {
 	public String getTextOfSuccessAlert() {
 		utility = new GeneralUtility(driver);
 		clickOnManageExpense();
-		ClickOnExpensecategory();
+		clickOnExpensecategory();
 		newtoolTip.click();
 		titleField.sendKeys("Icecream_" + utility.get_TimeStamp());
 		saveButton.click();
 		return utility.getTextOfElement(successAlert);
 	}
 
-	public String getbackgroundcolorOfDeleteAlert() {
+	public String getBackgroundColorOfDeleteAlert() {
 		utility = new GeneralUtility(driver);
 		pageutility=new PageUtility(driver);
 		clickOnManageExpense();
-		ClickOnManageExpenseButton();
+		clickOnManageExpenseButton();
 		deleteToolTip.click();
-		pageutility.handleAlert();
+		pageutility.acceptAlert();
 		String backgroundColor=utility.getCssSelectorValue(deleteSuccessfulAlert,"background-color");
 		return backgroundColor;
 		

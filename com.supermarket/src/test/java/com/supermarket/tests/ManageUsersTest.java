@@ -16,6 +16,6 @@ public void verifyAdminUserDeactivation()
 	manageuserspage=new ManageUsersPage(driver);
 	loginpage.login();
 	manageuserspage.clickOnManageUser();
-	manageuserspage.clickOnUsersDeactivateButton("Sree Parvathy");
+	manageuserspage.clickOnUsersDeactivateButton("Manu S");
 }
 }

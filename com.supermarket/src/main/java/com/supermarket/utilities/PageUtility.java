@@ -67,15 +67,15 @@ public class PageUtility {
 		actions = new Actions(driver);
 		actions.dragAndDrop(source, target);
 	}
-	public void handleAlert()
+	public void acceptAlert()
 	{
 		driver.switchTo().alert().accept();
 	}
 	
-	public String popupText()
+	public String getAlertText()
 	{
-		driver.switchTo().alert().getText();
-		return popupText();
+		return driver.switchTo().alert().getText();
+		
 	}
 	public void switch_To_Frame_by_Name(String name) {
 		driver.switchTo().frame(name);
@@ -83,6 +83,15 @@ public class PageUtility {
 	public void fileUpload(WebElement element, String path) {
 
 		element.sendKeys(path);
+	}
+	public boolean isElementPresent(String xpath)
+	{
+		try {
+			WebElement element=driver.findElement(By.xpath(xpath));
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 	public void scroll_By(int x, int y) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;

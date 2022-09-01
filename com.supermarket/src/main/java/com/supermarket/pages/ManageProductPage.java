@@ -60,11 +60,11 @@ public class ManageProductPage {
 	public void ClickOnSaveButton() {
 		 saveButton.click();
 	}
-	public String AddProduct()
+	public String getWarningMessageForMissedField(String excelFile,String excelSheet)
 	{
 		utility = new GeneralUtility(driver);
 		pageutility=new PageUtility(driver);
-		excel.setExcelFile("ProductData", "AddProduct");
+		excel.setExcelFile(excelFile, excelSheet);
 		String title = excel.getCellData(0, 0);
 		ClickOnManageProduct();
 		ClickOnNewToolTip();
@@ -72,8 +72,8 @@ public class ManageProductPage {
 		ClickOnNonVegRadioButton();
 		ClickOnWeightRadioButton();
 		pageutility.scrollAndclick(saveButton);
-		String alert= pageutility.popupText();
-		pageutility.handleAlert();
+		String alert= pageutility.getAlertText();
+		pageutility.acceptAlert();
 		return alert;	
 	}
 	public String attributeOfSearchButton()
@@ -97,6 +97,12 @@ public class ManageProductPage {
 		utility = new GeneralUtility(driver);
 		pageutility=new PageUtility(driver);
 		ClickOnManageProduct();
+		
+		
+		
+		
+		
+		
 		ClickOnNewToolTip();
 		pageutility.fileUpload(choseFileButton, System.getProperty("user.dir")+"//productimages//"+"AVT"+".jfif");
 		pageutility.scroll_into_View(choseFileButton);
