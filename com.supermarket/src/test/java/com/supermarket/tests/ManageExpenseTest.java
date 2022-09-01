@@ -32,7 +32,7 @@ public class ManageExpenseTest extends Base {
 				"Alert!\n" + 
 				"Category already exists.";
 		Assert.assertEquals(actualAlertmessage, expectedAlertMessage);
-		System.out.println(actualAlertmessage);
+		
 	}
 	@Test
 	public void verifyThatAdminCanCreateAlreadyExistCategoryTitle()
@@ -41,7 +41,6 @@ public class ManageExpenseTest extends Base {
 		loginpage=new LoginPage(driver);
 		loginpage.login();
 		String actualAlertmessage=manageexpensepage.getTextOfSuccessAlert();
-		System.out.println(actualAlertmessage);
 		String expectedAlertMessage="×\n" + 
 				"Alert!\n" + 
 				"Expense Category Created Successfully";
@@ -52,7 +51,7 @@ public class ManageExpenseTest extends Base {
 		manageexpensepage=new ManageExpensePage(driver);
 		loginpage=new LoginPage(driver);
 		loginpage.login();
-		String actual=manageexpensepage.getbackgroundcolorOfDeleteAlert();
+		String actual=manageexpensepage.getBackgroundColorOfDeleteAlert();
 		String expected="rgba(40, 167, 69, 1)";
 		Assert.assertEquals(actual, expected);
 		

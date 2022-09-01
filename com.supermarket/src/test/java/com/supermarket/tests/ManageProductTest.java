@@ -17,7 +17,7 @@ public class ManageProductTest extends Base {
 		manageproductpage = new ManageProductPage(driver);
 		loginpage = new LoginPage(driver);
 		loginpage.login();
-		String actual=manageproductpage.AddProduct();
+		String actual=manageproductpage.getWarningMessageForMissedField("ProductData", "AddProduct");
         System.out.println(actual);
 	}
 

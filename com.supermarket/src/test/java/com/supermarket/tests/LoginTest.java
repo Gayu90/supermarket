@@ -27,8 +27,7 @@ public class LoginTest extends Base {
 		String expectedAlertmessage="×\n" + 
 				"Alert!\n" + 
 				"Invalid Username/Password";
-		System.out.println(actualAlertmessage);
-	Assert.assertEquals(actualAlertmessage, expectedAlertmessage);
+			Assert.assertEquals(actualAlertmessage, expectedAlertmessage);
 		
 	}
 	

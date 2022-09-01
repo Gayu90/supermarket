@@ -22,8 +22,7 @@ private WebElement signinButton;
 private WebElement profileImage;
 @FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")
 private WebElement invalidAlertMessage;
-@FindBy(xpath="(//img[@alt='User Image'])[1]")
-private WebElement UserImage;
+
 public void enterUserName(String UserName)
 {
 	usernameField.sendKeys(UserName);
