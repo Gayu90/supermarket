@@ -30,8 +30,7 @@ public class ManageLocationPage {
 	private WebElement searchLocationButton;
 	@FindBy(xpath="//a[@class='btn btn-rounded btn-danger']")
 	private WebElement newButton;
-	@FindBy(xpath="//tbody//td[3]")
-	private List<WebElement>states;
+	
 	@FindBy(xpath="//input[@id='location']")
 	private WebElement locationField;
 	@FindBy(xpath="//input[@id='delivery']")
@@ -40,6 +39,12 @@ public class ManageLocationPage {
 	private WebElement saveButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
 	private WebElement successAlert;
+	
+	public ManageLocationPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
 	
 	public void clickOnManageLocation()
 	{
@@ -80,6 +85,7 @@ public class ManageLocationPage {
 	}
 
 	public List<String> getSearchLocation(String country, String state) {
+	
 		List<String> locations = new ArrayList<String>();
 		utility = new GeneralUtility(driver);
 		pageutility = new PageUtility(driver);
@@ -93,7 +99,7 @@ public class ManageLocationPage {
 		
 
 	}
-	public String addNewLocation(String country, String state,String location,String deliveryFee) {
+	public boolean IsNewLocationAdded(String country, String state,String location,String deliveryFee) {
 		utility = new GeneralUtility(driver);
 		pageutility=new PageUtility(driver);
 		clickOnManageLocation();
@@ -103,12 +109,10 @@ public class ManageLocationPage {
 		enterLocationField(location);
 		enterDeliveryChargeField(deliveryFee);
 		clickOnsaveButton();
-		return utility.getTextOfElement(successAlert);
+		return utility.isElementDisplayed(successAlert);
+
 	}
 
-	public ManageLocationPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
+	
 	
 }

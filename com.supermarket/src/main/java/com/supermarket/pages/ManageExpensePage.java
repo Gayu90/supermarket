@@ -33,6 +33,12 @@ public class ManageExpensePage {
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
 	private WebElement deleteSuccessfulAlert;
 	
+	public ManageExpensePage(WebDriver driver)
+	{
+	this.driver=driver;
+	PageFactory.initElements( driver,this);
+	}
+	
 	public void clickOnManageExpense() {
 		manageExpenseTab.click();
 	}
@@ -46,7 +52,7 @@ public class ManageExpensePage {
 	}
 	
 
-	public boolean ExpensecategoryPage() {
+	public boolean IsExpensecategoryRadioButtonSelected() {
 		utility = new GeneralUtility(driver);
 		clickOnManageExpense();
 		clickOnExpensecategory();
@@ -87,9 +93,5 @@ public class ManageExpensePage {
 	}
 	
 
-public ManageExpensePage(WebDriver driver)
-{
-this.driver=driver;
-PageFactory.initElements( driver,this);
-}
+
 }

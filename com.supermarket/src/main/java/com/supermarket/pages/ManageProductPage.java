@@ -32,6 +32,11 @@ public class ManageProductPage {
 	private WebElement choseFileButton;
 	@FindBy(xpath="//div[@id='imagePreview']")
 	private WebElement imagePreview;
+	
+	public ManageProductPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
 
 	public void ClickOnManageProduct() {
 		manageproducts.click();
@@ -111,8 +116,5 @@ public class ManageProductPage {
 	
 	
 	
-	public ManageProductPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
+	
 }

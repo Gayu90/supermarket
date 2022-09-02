@@ -26,6 +26,11 @@ public class ManageDeliveryBoyPage {
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
 	private WebElement updateSuccessAlert;
 	
+	public ManageDeliveryBoyPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
 	
 	public void clickManageDeliveryBoy()
 	{
@@ -65,8 +70,5 @@ public class ManageDeliveryBoyPage {
 	
 	
 	
-	public ManageDeliveryBoyPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
+	
 }

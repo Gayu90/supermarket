@@ -19,8 +19,8 @@ public void takeScreenShot(WebDriver driver,String ImageName)
 	try {
 		scrShot=(TakesScreenshot) driver;
 		File screenshot=scrShot.getScreenshotAs(OutputType.FILE);
-		String destination=System.getProperty("user.dir")+"//ScreenShots//"+"ImageName"+"timeStamp"+".png";
 		String timeStamp = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss").format(new Date());
+		String destination=System.getProperty("user.dir")+"//ScreenShots//"+ImageName+ timeStamp +".png";
 		File finalDestination = new File(destination);
 		FileHandler.copy(screenshot, finalDestination);
 	} catch (Exception e) {

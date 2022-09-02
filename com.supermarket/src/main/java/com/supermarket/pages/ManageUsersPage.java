@@ -19,6 +19,12 @@ public class ManageUsersPage {
 	
 	@FindBy(xpath = "//i[@class='nav-icon fas fa-user']")
 	private WebElement manageUser;
+	
+	public ManageUsersPage(WebDriver driver)
+	{
+	this.driver=driver;
+	PageFactory.initElements( driver,this);
+	}
 	public void clickOnManageUser()
 	{
 	manageUser.click();
@@ -40,10 +46,6 @@ public class ManageUsersPage {
 		pageutility.scrollAndclick(deactivateButton);
 
 	}
-	public ManageUsersPage(WebDriver driver)
-	{
-	this.driver=driver;
-	PageFactory.initElements( driver,this);
-	}
+	
 	}
 

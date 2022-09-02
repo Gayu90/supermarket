@@ -16,9 +16,9 @@ public class ManageExpenseTest extends Base {
 		manageexpensepage=new ManageExpensePage(driver);
 		loginpage=new LoginPage(driver);
 		loginpage.login();
-		manageexpensepage.ExpensecategoryPage();
-		Assert.assertTrue(manageexpensepage.ExpensecategoryPage());
-		System.out.println("Expense category Button is selected");
+		manageexpensepage.IsExpensecategoryRadioButtonSelected();
+		Assert.assertTrue(manageexpensepage.IsExpensecategoryRadioButtonSelected());
+		
 	
 	}
 	@Test

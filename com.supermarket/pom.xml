@@ -11,8 +11,11 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.0.0-M7</version>
           <configuration>
-          <suiteXmlFiles>
-       <suiteXmlFile>Parallelexecution.xml</suiteXmlFile>
+         
+       <suiteXmlFiles>
+      <file>src\main\resources\xmlfiles\Parallelexecution.xml</file>
+       <file>src\main\resources\xmlfiles\group.xml</file>
+                 
        </suiteXmlFiles>
        
           </configuration>

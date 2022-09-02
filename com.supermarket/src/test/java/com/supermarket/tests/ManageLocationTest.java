@@ -1,10 +1,8 @@
 package com.supermarket.tests;
 
 
-
-
-
-
+import java.util.ArrayList;
+import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -31,10 +29,26 @@ LoginPage loginpage;
 	@Test
 	public void verifyThatAdminCanGetListsOfLocationAsPerTheState() {
 
+		List<String>expectedStates=new ArrayList<String>();
+		List<String>actualStates=new ArrayList<String>();
 		managelocationpage = new ManageLocationPage(driver);
 		loginpage = new LoginPage(driver);
 		loginpage.login();
-		managelocationpage.getSearchLocation("United Kingdom", "Armagh");
+				
+		expectedStates.add("Armagh");
+		expectedStates.add("Armagh");
+		expectedStates.add("Armagh");
+		expectedStates.add("Armagh");
+        actualStates=managelocationpage.getSearchLocation("United Kingdom", "Armagh");
+        for(int i=0;i<expectedStates.size();i++)
+        {
+        	if(!expectedStates.get(i).equals(actualStates.get(i)))
+        	{
+        		Assert.assertTrue(false,"TestCase Failed");
+        	}
+        }
+
+		
 		
 
 	}
@@ -44,9 +58,9 @@ LoginPage loginpage;
 		managelocationpage = new ManageLocationPage(driver);
 		loginpage = new LoginPage(driver);
 		loginpage.login();
-		String actual = managelocationpage.addNewLocation("United Kingdom", "Armagh", "Markethill", "75");
-		String expected = "×\n" + "Alert!\n" + "Location Created Successfully";
-		Assert.assertEquals(actual, expected);
+	    boolean actual = managelocationpage.IsNewLocationAdded("United Kingdom", "Armagh", "Markethill", "75");
+	
+	    Assert.assertEquals(actual, true);
 
 	}
 }
