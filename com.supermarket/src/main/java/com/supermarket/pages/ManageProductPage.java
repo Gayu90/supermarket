@@ -102,12 +102,6 @@ public class ManageProductPage {
 		utility = new GeneralUtility(driver);
 		pageutility=new PageUtility(driver);
 		ClickOnManageProduct();
-		
-		
-		
-		
-		
-		
 		ClickOnNewToolTip();
 		pageutility.fileUpload(choseFileButton, System.getProperty("user.dir")+"//productimages//"+"AVT"+".jfif");
 		pageutility.scroll_into_View(choseFileButton);

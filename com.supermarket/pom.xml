@@ -3,6 +3,10 @@
   <groupId>com.supermarket</groupId>
   <artifactId>com.supermarket</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties> 
+  <maven.compiler.source>1.8</maven.compiler.source>
+  <maven.compiler.destination>1.8</maven.compiler.destination>
+  </properties>
    <build>
     <pluginManagement>
       <plugins>
@@ -14,7 +18,7 @@
          
        <suiteXmlFiles>
       <file>src\main\resources\xmlfiles\Parallelexecution.xml</file>
-       <file>src\main\resources\xmlfiles\group.xml</file>
+       
                  
        </suiteXmlFiles>
        

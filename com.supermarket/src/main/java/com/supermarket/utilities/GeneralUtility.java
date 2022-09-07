@@ -75,5 +75,9 @@ public class GeneralUtility {
 		return element.getAttribute(atbt).equals(expectedValue);
 		
 	}
+	public boolean isTextPresent(WebElement element,String expectedText)
+	{
+		return element.getText().equals(expectedText);
+	}
 	}
 

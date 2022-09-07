@@ -3,15 +3,15 @@
 <suite name="Parallelexecution" thread-count="3" parallel="tests">
 <test name="smokeRun">
 <classes>
-<class name="com.supermarket.testes.LoginTest">
+<class name="com.supermarket.tests.LoginTest">
 </class >
-<class name="com.supermarket.testes.ManageProductTest">
+<class name="com.supermarket.tests.ManageProductTest">
 </class>
 </classes>
 </test>
 <test name="reggression">
 <classes>
-<class name="com.supermarket.testes.ManageExpenseTest">
+<class name="com.supermarket.tests.ManageExpenseTest">
 </class >
 </classes>
 </test>

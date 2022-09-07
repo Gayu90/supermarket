@@ -39,6 +39,11 @@ LoginPage loginpage;
 		expectedStates.add("Armagh");
 		expectedStates.add("Armagh");
 		expectedStates.add("Armagh");
+		expectedStates.add("Armagh");
+		expectedStates.add("Armagh");
+		expectedStates.add("Armagh");
+		
+		
         actualStates=managelocationpage.getSearchLocation("United Kingdom", "Armagh");
         for(int i=0;i<expectedStates.size();i++)
         {
@@ -47,6 +52,7 @@ LoginPage loginpage;
         		Assert.assertTrue(false,"TestCase Failed");
         	}
         }
+       System.out.println(actualStates);
 
 		
 		
@@ -58,13 +64,11 @@ LoginPage loginpage;
 		managelocationpage = new ManageLocationPage(driver);
 		loginpage = new LoginPage(driver);
 		loginpage.login();
-	    boolean actual = managelocationpage.IsNewLocationAdded("United Kingdom", "Armagh", "Markethill", "75");
-	
-	    Assert.assertEquals(actual, true);
+		boolean actual = managelocationpage.IsNewLocationAdded("United Kingdom", "Armagh", "Markethill", "75");
+		Assert.assertEquals(actual, true);
 
 	}
 }
-
 
 
 

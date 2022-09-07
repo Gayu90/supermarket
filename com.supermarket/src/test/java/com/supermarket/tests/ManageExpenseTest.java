@@ -35,7 +35,7 @@ public class ManageExpenseTest extends Base {
 		
 	}
 	@Test
-	public void verifyThatAdminCanCreateAlreadyExistCategoryTitle()
+	public void verifyThatAdminCanCreateAlreadyExistCategoryTitleWithTimeStamp()
 	{
 		manageexpensepage=new ManageExpensePage(driver);
 		loginpage=new LoginPage(driver);

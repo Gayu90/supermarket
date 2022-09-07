@@ -77,6 +77,10 @@ public class PageUtility {
 		return driver.switchTo().alert().getText();
 		
 	}
+	public void dismissAlert()
+	{
+		driver.switchTo().alert().dismiss();
+	}
 	public void switch_To_Frame_by_Name(String name) {
 		driver.switchTo().frame(name);
 	}
@@ -100,6 +104,10 @@ public class PageUtility {
 	public void scroll_into_View(WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", element);
+	}
+	public void Click(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", element);
 	}
 	public void pageRefresh()
 	{

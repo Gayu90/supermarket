@@ -16,35 +16,35 @@ public class LoginTest extends Base {
 	public void verifyThatUserCanLoginSuccessfully() {
 		loginpage = new LoginPage(driver);
 		loginpage.login();
-		
+		Assert.assertTrue(loginpage.getLoginStatus());
 
 	}
 
 	@Test
 	public void verifyInvalidCredentialWarningmessage() {
-		loginpage=new LoginPage(driver);
-		String actualAlertmessage=loginpage.getInvalidLoginErrorMessage();
-		String expectedAlertmessage="×\n" + 
-				"Alert!\n" + 
-				"Invalid Username/Password";
-			Assert.assertEquals(actualAlertmessage, expectedAlertmessage);
-		
-	}
-	
-	
-	@Test(dataProvider="adminUser",dataProviderClass = DataProviders.class)
-	public void verifyCreatedAdminLogin(String userName,String password)
-	{
-			loginpage=new LoginPage(driver);
-			loginpage.login( userName,password);
-			Assert.assertTrue(loginpage.getLoginStatus());
-			
-			
-	}
-	
-	}
-	
+		loginpage = new LoginPage(driver);
+		String actualAlertmessage = loginpage.getInvalidLoginErrorMessage();
+		String expectedAlertmessage = "×\n" + "Alert!\n" + "Invalid Username/Password";
+		Assert.assertEquals(actualAlertmessage, expectedAlertmessage);
 
-	
+	}
 
+	@Test(dataProvider = "adminUser", dataProviderClass = DataProviders.class)
+	public void verifyCreatedAdminLogin(String userName, String password) {
+		loginpage = new LoginPage(driver);
+		loginpage.login(userName, password);
+		Assert.assertTrue(loginpage.getLoginStatus());
 
+	}
+
+	@Test
+	public void verifyThatAdminCanLogoutSuccessfully() {
+		loginpage = new LoginPage(driver);
+		loginpage.login();
+		String actual = loginpage.getLoginInMessage();
+		String expected = "Sign in to start your session";
+		Assert.assertEquals(actual, expected);
+
+	}
+
+}

@@ -93,7 +93,7 @@ public class ManageLocationPage {
 		clickOnSearchButton();
 		pageutility.select_selectByVisibleText(countryDropDown, country);
 		pageutility.select_selectByVisibleText(stateDropDown, state);
-		clickOnSearchLocationButton();
+		pageutility.scrollAndclick(searchLocationButton);
 		locations=utility.getTextOfElements("//tbody//td[3]");
 		return locations;
 		

@@ -18,16 +18,16 @@ public class ManageProductTest extends Base {
 		loginpage = new LoginPage(driver);
 		loginpage.login();
 		String actual=manageproductpage.getWarningMessageForMissedField("ProductData", "AddProduct");
-        System.out.println(actual);
+        String expected="Please enter weight price";
+        Assert.assertEquals(actual, expected);
 	}
 
-	@Test(priority=-1)
+	@Test(priority = -1)
 	public void verifyTheAttributeValueOfSearchButton() {
 		manageproductpage = new ManageProductPage(driver);
 		loginpage = new LoginPage(driver);
 		loginpage.login();
 		String actual = manageproductpage.attributeOfSearchButton();
-		System.out.println(actual);
 		String expected = " fa fa-search";
 		Assert.assertEquals(actual, expected);
 	}

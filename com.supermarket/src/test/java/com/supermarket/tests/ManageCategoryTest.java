@@ -1,5 +1,22 @@
 package com.supermarket.tests;
 
-public class ManageCategoryTest {
+import org.testng.annotations.Test;
 
+import com.supermarket.pages.LoginPage;
+import com.supermarket.pages.ManageCategoryPage;
+
+public class ManageCategoryTest {
+ManageCategoryPage managecategorypage;
+LoginPage loginpage;
+
+@Test
+public void verifyThatAdminCanReplaceTheCategoryImageWithNewImage()
+{
+	
+}
+@Test
+public void verifyThatNewCategoryGotAddedSuccessfully()
+{
+	
+}
 }
