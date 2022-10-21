@@ -17,7 +17,16 @@ LoginPage loginpage;
 		loginpage = new LoginPage(driver);
 		loginpage.login();
 		String actual = manageorderspage.PriceOfAnItem();
-		String expected = "£ 72";
+		String expected = "£ 10.55";
 		Assert.assertEquals(actual, expected);
+	}
+	@Test
+	public void verifyThatStatusOfOrderCanBeChanged()
+	{
+		manageorderspage = new ManageOrdersPage(driver);
+		loginpage = new LoginPage(driver);
+		loginpage.login();
+		manageorderspage.ClickOnManageOrders();
+		manageorderspage.changeStatusOfOrder("436");
 	}
 }
